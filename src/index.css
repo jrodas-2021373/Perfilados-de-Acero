@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-steel-950 text-slate-100;
+  }
+}
+
+/* Custom industrial utilities */
+.glow-orange {
+  box-shadow: 0 0 25px -5px rgba(249, 115, 22, 0.4);
+}
+
+.glow-orange-sm {
+  box-shadow: 0 0 15px -3px rgba(249, 115, 22, 0.3);
+}
+
+.steel-gradient {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+}
+
+.steel-border {
+  border-color: rgba(51, 65, 85, 0.7);
+}
+
+/* Subtle pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
