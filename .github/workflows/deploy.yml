@@ -3,8 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
+      - 'PDA-*'
       - PDA-1
+      - PDA-2
       - main
+      - master
   workflow_dispatch:
 
 permissions:
