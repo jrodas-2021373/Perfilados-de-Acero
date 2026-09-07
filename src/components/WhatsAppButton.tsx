@@ -9,7 +9,7 @@ export const WhatsAppButton: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
       {/* Tooltip bubble */}
       {tooltipOpen && (
-        <div className="hidden sm:flex items-center gap-2 bg-steel-900 border border-steel-700 text-slate-100 text-xs px-3.5 py-2 rounded-2xl shadow-xl animate-in fade-in slide-in-from-right-2 duration-300">
+        <div className="hidden sm:flex items-center gap-2 bg-slate-950 border border-slate-800 text-slate-100 text-xs px-3.5 py-2 rounded-2xl shadow-xl animate-in fade-in slide-in-from-right-2 duration-300">
           <span>¿Necesita cotización de acero?</span>
           <span className="font-bold text-emerald-400">Escríbanos</span>
           <button 
@@ -28,11 +28,11 @@ export const WhatsAppButton: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp a Perfilados de Acero"
-        className="w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 relative group glow-orange-sm"
+        className="w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 relative group"
       >
         <MessageCircle className="w-7 h-7 fill-current" />
-        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-industrial-orange rounded-full border-2 border-steel-950 animate-ping" />
-        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-industrial-orange rounded-full border-2 border-steel-950" />
+        <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-white animate-ping" />
+        <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-white" />
       </a>
     </div>
   );

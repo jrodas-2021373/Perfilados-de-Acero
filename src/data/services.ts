@@ -1,4 +1,7 @@
 import { ServiceItem } from '../types';
+import ranuracionImg from '../assets/images/ranuracion-tubos.jpg';
+import montacargasImg from '../assets/images/montacargas.jpg';
+import corteImg from '../assets/images/corte-medida.jpg';
 
 export const servicesData: ServiceItem[] = [
   {
@@ -18,7 +21,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Tipos de tubería', value: 'Tubería negra ASTM A53, A795 y galvanizada' },
       { label: 'Inspección', value: 'Verificación con cinta perimétrica Pi-Tape y galgas de profundidad' }
     ],
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    image: ranuracionImg,
     ctaText: 'Cotizar Ranuración de Tubos'
   },
   {
@@ -38,7 +41,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Modalidad de renta', value: 'Por turno (8 hrs), semana completa o contrato mensual' },
       { label: 'Disponibilidad', value: 'Cobertura inmediata en Ciudad de Guatemala, Mixco, Villa Nueva y municipios aledaños' }
     ],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    image: montacargasImg,
     ctaText: 'Solicitar Renta de Montacargas'
   },
   {
@@ -57,7 +60,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Tolerancia', value: '+/- 1.5 mm en corte mecánico' },
       { label: 'Servicios adicionales', value: 'Perforación de placas base y desbaste de bordes' }
     ],
-    image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    image: corteImg,
     ctaText: 'Consultar Servicio de Corte'
   }
 ];

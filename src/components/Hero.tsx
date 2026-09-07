@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '../data/company';
+import heroPosterImg from '../assets/images/hero-poster.jpg';
 
 export const Hero: React.FC = () => {
   return (
@@ -11,10 +12,10 @@ export const Hero: React.FC = () => {
         loop
         muted
         playsInline
-        poster="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80"
+        poster={heroPosterImg}
         className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.6] contrast-105 pointer-events-none"
       >
-        <source src="./hero-steel.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}hero-steel.mp4`} type="video/mp4" />
         <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1280_720_30fps.mp4" type="video/mp4" />
       </video>
 

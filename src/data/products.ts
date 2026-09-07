@@ -1,4 +1,10 @@
 import { Product } from '../types';
+import laminaImg from '../assets/images/lamina-desplegada.jpg';
+import varillaImg from '../assets/images/varilla-redonda.jpg';
+import rejillaImg from '../assets/images/rejilla-electroforjada.jpg';
+import costanerasImg from '../assets/images/costaneras-perfil-c.jpg';
+import angulosImg from '../assets/images/angulos-platinas.jpg';
+import tuberiaImg from '../assets/images/tuberia-estructural.jpg';
 
 export const productsData: Product[] = [
   {
@@ -7,7 +13,7 @@ export const productsData: Product[] = [
     category: 'laminas-mallas',
     shortDescription: 'Láminas de acero expandido de alta rigidez y ventilación, ideales para pisos industriales, pasarelas, filtros y protecciones perimetrales.',
     fullDescription: 'La lámina desplegada se fabrica mediante un proceso simultáneo de corte y estirado en una sola pieza de acero, sin uniones ni soldaduras. Esto garantiza una resistencia mecánica excepcional con un peso reducido, permitiendo el libre paso de luz, aire y líquidos.',
-    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80',
+    image: laminaImg,
     badge: 'Más Cotizado',
     standard: 'ASTM A1011 / Calidad Comercial',
     measures: [
@@ -39,7 +45,7 @@ export const productsData: Product[] = [
     category: 'perfiles-barras',
     shortDescription: 'Barras de acero de alta ductilidad y soldabilidad para refuerzo, anclajes, tensores, pernos y herrería pesada.',
     fullDescription: 'Nuestras varillas redondas lisas cumplen con rigurosos estándares de composición química y propiedades mecánicas. Son la opción predilecta para elaboración de pernos de anclaje, tensores estructurales, remaches, pasadores y piezas maquinadas en taller.',
-    image: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    image: varillaImg,
     badge: 'Grado Estructural',
     standard: 'ASTM A36 / Grado 40 / Grado 60',
     measures: [
@@ -72,7 +78,7 @@ export const productsData: Product[] = [
     category: 'laminas-mallas',
     shortDescription: 'Parrillas industriales electrosoldadas por forja térmica, diseñadas para resistir tráfico peatonal intenso y cargas vehiculares pesadas.',
     fullDescription: 'La rejilla electroforjada se compone de soleras de carga unidas a barras transversales mediante un proceso automatizado de electroforja (fusión térmica y presión constante). Esto crea una pieza monolítica sin soldaduras débiles, con máxima capacidad de carga y resistencia a la corrosión.',
-    image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
+    image: rejillaImg,
     badge: 'Alta Carga',
     standard: 'Norma NAAMM MBG 531 / ASTM A1011',
     measures: [
@@ -103,7 +109,7 @@ export const productsData: Product[] = [
     category: 'perfiles-barras',
     shortDescription: 'Perfil estructural en forma de C conformado en frío, indispensable para la estructura de techos, cubiertas y cerramientos en Guatemala.',
     fullDescription: 'Nuestras costaneras de acero se fabrican con acero estructural de alta resistencia. Disponibles tanto en acabado negro para pintar como galvanizado de fábrica para máxima protección contra la intemperie y la humedad tropical.',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    image: costanerasImg,
     badge: 'Estructural Básico',
     standard: 'ASTM A500 Grado C / ASTM A653 (Galvanizado)',
     measures: [
@@ -132,7 +138,7 @@ export const productsData: Product[] = [
     category: 'perfiles-barras',
     shortDescription: 'Perfiles angulares en L y soleras de acero laminadas en caliente para refuerzos, marcos, armaduras y herrería industrial.',
     fullDescription: 'Los perfiles angulares y las soleras (platinas) de acero al carbono estructural ASTM A36 ofrecen excelente rigidez torsional y facilidad de ensamble mediante soldadura o atornillado. Esenciales en cualquier taller de estructuras metálicas.',
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=800&q=80',
+    image: angulosImg,
     badge: 'Norma ASTM A36',
     standard: 'ASTM A36',
     measures: [
@@ -158,7 +164,7 @@ export const productsData: Product[] = [
     category: 'tuberia',
     shortDescription: 'Tubos cuadrados (chucho), rectangulares y redondos de alta resistencia para columnas, marcos, carrocerías y sistemas hidráulicos.',
     fullDescription: 'Ofrecemos un inventario completo de tubería de acero soldada por resistencia eléctrica (ERW) para aplicaciones estructurales, mecánicas y conducción. Acabados limpios con excelente adherencia de pintura y galvanizado.',
-    image: 'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80',
+    image: tuberiaImg,
     badge: 'Resistencia Superior',
     standard: 'ASTM A500 Grados B y C / ASTM A53',
     measures: [

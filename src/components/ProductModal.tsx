@@ -28,24 +28,24 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
   const quoteMessage = `Hola Perfilados de Acero, S.A., me encuentro revisando la ficha técnica de *${product.name}* (Norma: ${product.standard || 'Estándar'}). Deseo consultar precios, disponibilidad y tiempos de entrega para mi proyecto.`;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
       <div 
-        className="relative bg-steel-900 border border-steel-700 rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col my-auto"
+        className="relative bg-white border border-slate-200 rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header with Image Background */}
-        <div className="relative h-44 sm:h-52 bg-steel-950 overflow-hidden">
+        <div className="relative h-44 sm:h-52 bg-slate-950 overflow-hidden">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-steel-900 via-steel-900/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
 
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-steel-800/80 hover:bg-steel-700 text-slate-200 hover:text-white flex items-center justify-center border border-steel-600 transition-colors"
+            className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center border border-white/20 transition-colors"
             aria-label="Cerrar modal"
           >
             <X className="w-5 h-5" />
@@ -55,13 +55,13 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
           <div className="absolute bottom-4 left-6 right-6">
             <div className="flex items-center gap-2 mb-1.5">
               {product.standard && (
-                <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded bg-industrial-orange text-white">
-                  <Shield className="w-3 h-3" />
+                <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded bg-white/95 text-slate-950 shadow-sm">
+                  <Shield className="w-3 h-3 text-slate-800" />
                   <span>{product.standard}</span>
                 </span>
               )}
               {product.badge && (
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-steel-800 text-slate-300 border border-steel-700">
+                <span className="text-xs font-medium px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-slate-700">
                   {product.badge}
                 </span>
               )}
@@ -73,28 +73,28 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
         </div>
 
         {/* Modal Body - Scrollable */}
-        <div className="p-6 overflow-y-auto space-y-6 text-sm flex-1">
+        <div className="p-6 overflow-y-auto space-y-6 text-sm flex-1 text-slate-700">
           {/* Detailed description */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-industrial-orange mb-2 flex items-center gap-1.5">
-              <FileText className="w-4 h-4" />
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 mb-2 flex items-center gap-1.5">
+              <FileText className="w-4 h-4 text-slate-800" />
               <span>Descripción Técnica del Producto</span>
             </h4>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed">
               {product.fullDescription}
             </p>
           </div>
 
           {/* Measures & Dimensions */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-industrial-orange mb-2.5 flex items-center gap-1.5">
-              <Layers className="w-4 h-4" />
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 mb-2.5 flex items-center gap-1.5">
+              <Layers className="w-4 h-4 text-slate-800" />
               <span>Medidas, Calibres y Dimensiones Disponibles</span>
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-steel-950/60 p-3.5 rounded-xl border border-steel-800">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
               {product.measures.map((m, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-2 text-xs text-slate-800 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <span>{m}</span>
                 </div>
               ))}
@@ -104,18 +104,18 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
           {/* Technical Specs Table */}
           {product.specs && product.specs.length > 0 && (
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-industrial-orange mb-2.5">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 mb-2.5">
                 Especificaciones Técnicas y Propiedades
               </h4>
-              <div className="overflow-x-auto rounded-xl border border-steel-800 bg-steel-950/40">
+              <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
                 <table className="w-full text-left text-xs">
-                  <tbody className="divide-y divide-steel-800">
+                  <tbody className="divide-y divide-slate-200">
                     {product.specs.map((spec, idx) => (
-                      <tr key={idx} className="hover:bg-steel-800/30">
-                        <td className="py-2.5 px-4 font-semibold text-slate-400 w-1/3 bg-steel-900/50">
+                      <tr key={idx} className="hover:bg-slate-50">
+                        <td className="py-2.5 px-4 font-semibold text-slate-600 w-1/3 bg-slate-50/80">
                           {spec.property}
                         </td>
-                        <td className="py-2.5 px-4 text-slate-200 font-medium">
+                        <td className="py-2.5 px-4 text-slate-900 font-medium">
                           {spec.value}
                         </td>
                       </tr>
@@ -129,13 +129,13 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
           {/* Applications list */}
           {product.applications && product.applications.length > 0 && (
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-industrial-orange mb-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 mb-2">
                 Principales Aplicaciones Industriales
               </h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {product.applications.map((app, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-xs text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-industrial-orange flex-shrink-0" />
+                  <li key={idx} className="flex items-center gap-2 text-xs text-slate-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-800 flex-shrink-0" />
                     <span>{app}</span>
                   </li>
                 ))}
@@ -145,16 +145,16 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 sm:p-5 bg-steel-950 border-t border-steel-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="text-xs text-slate-400 text-center sm:text-left">
+        <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-xs text-slate-500 text-center sm:text-left">
             <span>¿Requiere corte o medidas personalizadas? </span>
-            <span className="text-slate-300 font-medium">Consulte con nuestros asesores.</span>
+            <span className="text-slate-800 font-semibold">Consulte con nuestros asesores.</span>
           </div>
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <button
               onClick={onClose}
-              className="px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white bg-steel-800 hover:bg-steel-700 rounded-lg border border-steel-700 transition-colors"
+              className="px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-slate-950 bg-white hover:bg-slate-100 rounded-lg border border-slate-300 transition-colors"
             >
               Cerrar
             </button>
@@ -162,7 +162,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
               href={createWhatsAppLink(quoteMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-lg shadow-md transition-colors"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-lg shadow-sm transition-colors"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               <span>Cotizar por WhatsApp</span>

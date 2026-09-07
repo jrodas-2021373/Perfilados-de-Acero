@@ -27,23 +27,23 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="nosotros" className="py-20 sm:py-28 bg-steel-900/40 relative border-t border-steel-800">
+    <section id="nosotros" className="py-20 sm:py-28 bg-slate-50 relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Story & Vision */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-industrial-orange/10 border border-industrial-orange/30 text-industrial-orange text-xs font-bold uppercase tracking-wider mb-4">
-              <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+              <ShieldCheck className="w-3.5 h-3.5 text-slate-800" />
               <span>Compromiso y Respaldo</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight mb-6">
-              Impulsando el Desarrollo y la Construcción en <span className="text-industrial-orange">Guatemala</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-tight mb-6">
+              Impulsando el Desarrollo y la Construcción en Guatemala
             </h2>
 
-            <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
               <p>
-                En <strong className="text-white">Perfilados de Acero, S.A.</strong> nos dedicamos a la distribución de productos de acero estructural de primera calidad y a la prestación de servicios mecánicos y logísticos especializados.
+                En <strong className="text-slate-900 font-bold">Perfilados de Acero, S.A.</strong> nos dedicamos a la distribución de productos de acero estructural de primera calidad y a la prestación de servicios mecánicos y logísticos especializados.
               </p>
               <p>
                 Atendemos constructores, ingenieros residentes, talleres de estructuras metálicas, ingenios, plantas industriales y proyectos residenciales que exigen precisión dimensional, resistencia garantizada y entregas puntuales.
@@ -52,26 +52,26 @@ export const AboutSection: React.FC = () => {
 
             {/* Checklist */}
             <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3 text-sm text-slate-200">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                 <span>Precios competitivos directos de distribuidor en Guatemala.</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-slate-200">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                 <span>Inventario permanente de lámina desplegada, rejilla y varilla lisa.</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-slate-200">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                 <span>Operaciones de carga y descarga respaldadas por montacargas propios.</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-steel-950/80 border border-steel-800">
-              <span className="text-xs text-slate-400 block mb-1">Ubicación y Base de Operaciones:</span>
-              <span className="text-sm font-bold text-white block">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <span className="text-xs text-slate-500 block mb-1 font-medium">Ubicación y Base de Operaciones:</span>
+              <span className="text-sm font-bold text-slate-950 block">
                 {companyInfo.fullLocation}
               </span>
-              <span className="text-xs text-industrial-orange font-medium mt-1 block">
+              <span className="text-xs text-slate-600 font-medium mt-1 block">
                 {companyInfo.coverage}
               </span>
             </div>
@@ -84,15 +84,15 @@ export const AboutSection: React.FC = () => {
               return (
                 <div 
                   key={idx}
-                  className="p-6 rounded-2xl bg-steel-900 border border-steel-800 hover:border-steel-700 shadow-lg hover:shadow-xl transition-all"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-industrial-orange/10 border border-industrial-orange/30 flex items-center justify-center text-industrial-orange mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-slate-950 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
