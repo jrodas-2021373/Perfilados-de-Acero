@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
 import { companyInfo, createWhatsAppLink } from '../data/company';
+import { LogoIcon } from './LogoIcon';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -16,10 +17,8 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-md">
-                <span className="font-black text-slate-950 text-lg tracking-tighter font-mono select-none">
-                  PA
-                </span>
+              <div className="w-10 h-10 rounded-xl bg-white text-slate-950 flex items-center justify-center shadow-md p-1.5">
+                <LogoIcon className="w-full h-full text-slate-950" />
               </div>
               <div>
                 <span className="text-xl font-extrabold tracking-tight text-white block leading-none">

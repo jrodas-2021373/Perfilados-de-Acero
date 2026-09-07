@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '../data/company';
+import { LogoIcon } from './LogoIcon';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,18 +32,27 @@ export const Navbar: React.FC = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           
-          {/* Typographic Brand Logo */}
-          <a href="#inicio" className="group flex flex-col">
-            <span className={`text-lg sm:text-xl font-black tracking-wider uppercase transition-colors ${
-              isScrolled ? 'text-slate-950 group-hover:text-slate-700' : 'text-white group-hover:text-slate-200'
+          {/* Brand Logo with Official Steel Emblem */}
+          <a href="#inicio" className="group flex items-center gap-3">
+            <div className={`p-1.5 rounded-xl transition-all duration-300 ${
+              isScrolled 
+                ? 'bg-slate-950 text-white shadow-sm' 
+                : 'bg-white/10 backdrop-blur-md text-white border border-white/20'
             }`}>
-              PERFILADOS DE ACERO
-            </span>
-            <span className={`text-[10px] tracking-widest font-mono ${
-              isScrolled ? 'text-slate-500' : 'text-slate-400'
-            }`}>
-              S.A. · GUATEMALA
-            </span>
+              <LogoIcon className="w-7 h-7 sm:w-8 sm:h-8 transition-transform group-hover:scale-105" />
+            </div>
+            <div className="flex flex-col">
+              <span className={`text-base sm:text-lg font-black tracking-wider uppercase transition-colors ${
+                isScrolled ? 'text-slate-950 group-hover:text-slate-700' : 'text-white group-hover:text-slate-200'
+              }`}>
+                PERFILADOS DE ACERO
+              </span>
+              <span className={`text-[10px] tracking-widest font-mono ${
+                isScrolled ? 'text-slate-500' : 'text-slate-400'
+              }`}>
+                S.A. · GUATEMALA
+              </span>
+            </div>
           </a>
 
           {/* Clean Desktop Navigation Links */}

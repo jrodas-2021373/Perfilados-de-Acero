@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
           {/* Monumental, Pure White Title - No rainbow gradient */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.95]">
             Acero de <br />
-            Resistencia.
+            Resistencia
           </h1>
 
           {/* Calm, Direct Subtext */}

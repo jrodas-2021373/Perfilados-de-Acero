@@ -21,8 +21,8 @@ Este documento certifica que todas las imágenes y recursos multimedia integrado
 
 | Archivo Local | Destino en Web | Origen / ID | Licencia | Tipo de Uso |
 | :--- | :--- | :--- | :--- | :--- |
-| `hero-steel.mp4` | Video de fondo Portada | Pexels Video (ID: 3129671) | Pexels License | Comercial Libre |
-| `hero-poster.jpg` | Poster de video Portada | Unsplash (`photo-1504307651254-35680f356dfd`) | Unsplash License | Comercial Libre |
+| `hero-steel.mp4` | Video de fondo Portada | Mixkit Video (ID: 47755 - Workers welding heavy metal in a factory) | Mixkit License | Comercial Libre |
+| `hero-poster.jpg` | Poster de video Portada | Mixkit Video Frame (ID: 47755) | Mixkit License | Comercial Libre |
 | `lamina-desplegada.jpg` | Catálogo de Productos | Unsplash (`photo-1587293852726-70cdb56c2866`) | Unsplash License | Comercial Libre |
 | `varilla-redonda.jpg` | Catálogo de Productos | Unsplash (`photo-1589939705384-5185137a7f0f`) | Unsplash License | Comercial Libre |
 | `rejilla-electroforjada.jpg` | Catálogo de Productos | Unsplash (`photo-1533090161767-e6ffed986c88`) | Unsplash License | Comercial Libre |
