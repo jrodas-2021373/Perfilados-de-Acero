@@ -69,42 +69,39 @@ export const QuoteCalculator: React.FC = () => {
   };
 
   return (
-    <section id="cotizador" className="py-20 sm:py-28 bg-steel-950 relative overflow-hidden">
-      {/* Decorative background circle */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-industrial-orange/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="cotizador" className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <Calculator className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <Calculator className="w-3.5 h-3.5 text-slate-800" />
             <span>Cotización Rápida y Transparente</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mb-4">
             Cotizador Inteligente en Línea
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Arme su pedido preliminar seleccionando materiales, medidas y ubicación de entrega. Le responderemos de inmediato con la cotización formal para su proyecto.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Form Settings */}
-          <div className="lg:col-span-7 bg-steel-900/90 border border-steel-800 rounded-3xl p-6 sm:p-8 shadow-xl">
-            <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-industrial-orange/20 text-industrial-orange flex items-center justify-center text-sm font-black">1</span>
+          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-950 mb-6 flex items-center gap-2.5">
+              <span className="w-7 h-7 rounded-lg bg-slate-950 text-white flex items-center justify-center text-sm font-black">1</span>
               <span>Seleccione los detalles de su requerimiento</span>
             </h3>
 
             <div className="space-y-5">
               {/* Product Select */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                   Producto o Servicio requerido:
                 </label>
                 <select
                   value={selectedProductId}
                   onChange={handleProductChange}
-                  className="w-full bg-steel-950 border border-steel-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-industrial-orange focus:ring-1 focus:ring-industrial-orange transition-colors"
+                  className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-slate-950 transition-colors shadow-sm"
                 >
                   {catalogItems.map((item) => (
                     <option key={item.id} value={item.id}>
@@ -116,13 +113,13 @@ export const QuoteCalculator: React.FC = () => {
 
               {/* Measure Select */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                   Medida, calibre o especificación técnica:
                 </label>
                 <select
                   value={selectedMeasure}
                   onChange={(e) => setSelectedMeasure(e.target.value)}
-                  className="w-full bg-steel-950 border border-steel-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-industrial-orange focus:ring-1 focus:ring-industrial-orange transition-colors"
+                  className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-slate-950 transition-colors shadow-sm"
                 >
                   {currentItem.measures.map((measure, idx) => (
                     <option key={idx} value={measure}>
@@ -135,7 +132,7 @@ export const QuoteCalculator: React.FC = () => {
               {/* Quantity and Location */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                     Cantidad estimada:
                   </label>
                   <input
@@ -143,12 +140,12 @@ export const QuoteCalculator: React.FC = () => {
                     min="1"
                     value={quantity}
                     onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-full bg-steel-950 border border-steel-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-industrial-orange focus:ring-1 focus:ring-industrial-orange transition-colors"
+                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-slate-950 transition-colors shadow-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                     Lugar o departamento de entrega:
                   </label>
                   <input
@@ -156,14 +153,14 @@ export const QuoteCalculator: React.FC = () => {
                     value={deliveryLocation}
                     onChange={(e) => setDeliveryLocation(e.target.value)}
                     placeholder="Ej. Ciudad de Guatemala, Escuintla, Quetzaltenango..."
-                    className="w-full bg-steel-950 border border-steel-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-industrial-orange focus:ring-1 focus:ring-industrial-orange transition-colors"
+                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-slate-950 transition-colors shadow-sm"
                   />
                 </div>
               </div>
 
               {/* Notes */}
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                   Notas adicionales (opcional):
                 </label>
                 <textarea
@@ -171,24 +168,24 @@ export const QuoteCalculator: React.FC = () => {
                   value={projectNotes}
                   onChange={(e) => setProjectNotes(e.target.value)}
                   placeholder="¿Requiere corte a medida, acabado galvanizado, o entrega en fecha específica? Escríbalo aquí..."
-                  className="w-full bg-steel-950 border border-steel-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-industrial-orange focus:ring-1 focus:ring-industrial-orange transition-colors resize-none"
+                  className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-slate-950 transition-colors resize-none shadow-sm"
                 />
               </div>
             </div>
           </div>
 
-          {/* Live Preview Box */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-steel-900 to-steel-950 border border-steel-700 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between">
+          {/* Live Preview Box - High contrast dark terminal element */}
+          <div className="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between text-white">
             <div>
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-steel-800">
-                <span className="text-xs font-bold text-industrial-orange uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                <span className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-white" />
                   <span>Resumen de la Solicitud</span>
                 </span>
                 <span className="text-xs text-emerald-400 font-medium">Listo para enviar</span>
               </div>
 
-              <div className="bg-steel-950/80 rounded-2xl p-4 sm:p-5 border border-steel-800 font-mono text-xs leading-relaxed text-slate-200 whitespace-pre-wrap mb-6 select-all">
+              <div className="bg-black/60 rounded-2xl p-4 sm:p-5 border border-slate-800 font-mono text-xs leading-relaxed text-slate-200 whitespace-pre-wrap mb-6 select-all">
                 {generateMessage()}
               </div>
 
@@ -208,7 +205,7 @@ export const QuoteCalculator: React.FC = () => {
             <div className="space-y-3 pt-2">
               <button
                 onClick={handleWhatsAppSend}
-                className="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-900/40 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm"
+                className="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-950/50 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Enviar Cotización por WhatsApp</span>
@@ -217,15 +214,15 @@ export const QuoteCalculator: React.FC = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleEmailSend}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-steel-800 hover:bg-steel-700 text-slate-200 hover:text-white font-semibold py-2.5 px-4 rounded-xl border border-steel-700 transition-colors text-xs"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold py-2.5 px-4 rounded-xl border border-slate-700 transition-colors text-xs"
                 >
-                  <Mail className="w-4 h-4 text-industrial-orange" />
+                  <Mail className="w-4 h-4 text-slate-300" />
                   <span>Enviar por Correo</span>
                 </button>
 
                 <button
                   onClick={handleCopy}
-                  className="px-4 py-2.5 bg-steel-800 hover:bg-steel-700 text-slate-300 hover:text-white rounded-xl border border-steel-700 transition-colors text-xs font-semibold"
+                  className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-colors text-xs font-semibold"
                 >
                   {copied ? '¡Copiado!' : 'Copiar Texto'}
                 </button>

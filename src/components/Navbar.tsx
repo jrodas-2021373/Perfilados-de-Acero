@@ -26,17 +26,21 @@ export const Navbar: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav className={`transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/85 backdrop-blur-md border-b border-white/10 py-4' 
-          : 'bg-gradient-to-b from-black/80 via-black/30 to-transparent py-6'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-3.5' 
+          : 'bg-gradient-to-b from-black/80 via-black/30 to-transparent py-5'
       }`}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           
-          {/* Typographic Brand Logo - No generic box */}
+          {/* Typographic Brand Logo */}
           <a href="#inicio" className="group flex flex-col">
-            <span className="text-lg sm:text-xl font-black tracking-wider text-white uppercase group-hover:text-slate-300 transition-colors">
+            <span className={`text-lg sm:text-xl font-black tracking-wider uppercase transition-colors ${
+              isScrolled ? 'text-slate-950 group-hover:text-slate-700' : 'text-white group-hover:text-slate-200'
+            }`}>
               PERFILADOS DE ACERO
             </span>
-            <span className="text-[10px] tracking-widest text-slate-400 font-mono">
+            <span className={`text-[10px] tracking-widest font-mono ${
+              isScrolled ? 'text-slate-500' : 'text-slate-400'
+            }`}>
               S.A. · GUATEMALA
             </span>
           </a>
@@ -47,7 +51,11 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors tracking-wide"
+                className={`text-sm font-medium tracking-wide transition-colors ${
+                  isScrolled 
+                    ? 'text-slate-600 hover:text-slate-950' 
+                    : 'text-slate-200 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -60,7 +68,11 @@ export const Navbar: React.FC = () => {
               href={createWhatsAppLink("Hola, deseo consultar disponibilidad y cotización de acero.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white bg-white/10 hover:bg-white/20 border border-white/20 px-5 py-2.5 rounded-full backdrop-blur-sm transition-all"
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full transition-all ${
+                isScrolled
+                  ? 'text-white bg-slate-950 hover:bg-slate-800 shadow-sm'
+                  : 'text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm'
+              }`}
             >
               <span>Cotizar</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -71,7 +83,9 @@ export const Navbar: React.FC = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Abrir menú"
-            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'text-slate-900 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+            }`}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -79,26 +93,30 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4 animate-in fade-in duration-200">
+          <div className={`md:hidden border-b px-6 py-6 space-y-4 animate-in fade-in duration-200 shadow-xl ${
+            isScrolled ? 'bg-white border-slate-200' : 'bg-black/95 border-white/10 backdrop-blur-xl'
+          }`}>
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium text-slate-200 hover:text-white py-1 transition-colors"
+                  className={`text-base font-medium py-1 transition-colors ${
+                    isScrolled ? 'text-slate-700 hover:text-slate-950' : 'text-slate-200 hover:text-white'
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/10">
+            <div className={`pt-3 border-t ${isScrolled ? 'border-slate-200' : 'border-white/10'}`}>
               <a
                 href={createWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-white text-black font-bold py-3 rounded-full text-xs uppercase tracking-wider"
+                className="w-full inline-flex items-center justify-center gap-2 bg-slate-950 text-white font-bold py-3 rounded-full text-xs uppercase tracking-wider hover:bg-slate-800"
               >
                 <span>Cotizar por WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4" />
