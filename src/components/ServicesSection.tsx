@@ -30,18 +30,18 @@ export const ServicesSection: React.FC = () => {
             return (
               <div 
                 key={service.id}
-                className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-10 shadow-sm hover:shadow-md hover:border-slate-300 transition-all"
+                className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-md hover:border-slate-300 transition-all"
               >
-                <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
+                <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-stretch`}>
                   {/* Service Image */}
-                  <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md relative group h-64 sm:h-80 lg:h-96 bg-slate-100">
+                  <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-md relative group min-h-[300px] sm:min-h-[380px] lg:min-h-0 self-stretch bg-slate-100 flex flex-col justify-end">
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
-                    <div className="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 shadow-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="relative z-10 m-4 sm:m-6 p-4 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 shadow-sm">
                       <span className="text-[11px] font-bold text-slate-500 block uppercase tracking-wider">
                         Servicio Certificado
                       </span>

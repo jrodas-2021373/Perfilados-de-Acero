@@ -29,72 +29,85 @@ export const AboutSection: React.FC = () => {
   return (
     <section id="nosotros" className="py-20 sm:py-28 bg-slate-50 relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Story & Vision */}
-          <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-slate-800" />
-              <span>Compromiso y Respaldo</span>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+          {/* Left Column: Story, Commitments & Operations */}
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-slate-800" />
+                <span>Compromiso y Respaldo</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-tight mb-6">
-              Impulsando el Desarrollo y la Construcción en Guatemala
-            </h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-tight mb-5">
+                Impulsando el Desarrollo y la Construcción en Guatemala
+              </h2>
 
-            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-              <p>
-                En <strong className="text-slate-900 font-bold">Perfilados de Acero, S.A.</strong> nos dedicamos a la distribución de productos de acero estructural de primera calidad y a la prestación de servicios mecánicos y logísticos especializados.
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                En <strong className="text-slate-900 font-bold">Perfilados de Acero, S.A.</strong> proveemos soluciones integrales en acero estructural certificado, respaldadas por asesoría técnica calificada, servicios de taller y logística directa a obra.
               </p>
-              <p>
-                Atendemos constructores, ingenieros residentes, talleres de estructuras metálicas, ingenios, plantas industriales y proyectos residenciales que exigen precisión dimensional, resistencia garantizada y entregas puntuales.
-              </p>
+
+              {/* Checklist Commitments */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-slate-700 font-semibold">
+                    Precios competitivos directos de distribuidor en Guatemala.
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-slate-700 font-semibold">
+                    Inventario permanente de perfiles, tubería, lámina y varilla.
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-slate-700 font-semibold">
+                    Trazabilidad y fichas técnicas certificadas para supervisión en obra.
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Checklist */}
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                <span>Precios competitivos directos de distribuidor en Guatemala.</span>
+            {/* Bottom Location & Operations Card */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-4 mt-2">
+              <div>
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-0.5">
+                  Base de Operaciones y Cobertura
+                </span>
+                <span className="text-sm font-black text-slate-950 block">
+                  {companyInfo.fullLocation}
+                </span>
+                <span className="text-xs text-slate-600 font-medium block mt-0.5">
+                  {companyInfo.coverage}
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                <span>Inventario permanente de lámina desplegada, rejilla y varilla lisa.</span>
+              <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 border border-slate-200 flex items-center justify-center flex-shrink-0">
+                <Truck className="w-5 h-5" />
               </div>
-              <div className="flex items-center gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                <span>Operaciones de carga y descarga respaldadas por montacargas propios.</span>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <span className="text-xs text-slate-500 block mb-1 font-medium">Ubicación y Base de Operaciones:</span>
-              <span className="text-sm font-bold text-slate-950 block">
-                {companyInfo.fullLocation}
-              </span>
-              <span className="text-xs text-slate-600 font-medium mt-1 block">
-                {companyInfo.coverage}
-              </span>
             </div>
           </div>
 
-          {/* Right Column: Pillars Grid */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {/* Right Column: 4 Pillars 2x2 Grid */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-full">
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div 
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 mb-4">
-                    <Icon className="w-6 h-6" />
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 mb-4">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {pillar.description}
+                    </p>
                   </div>
-                  <h3 className="text-base font-bold text-slate-950 mb-2">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {pillar.description}
-                  </p>
                 </div>
               );
             })}

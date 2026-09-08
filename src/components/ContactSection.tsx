@@ -28,11 +28,11 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 sm:py-28 bg-white relative border-t border-slate-200">
+    <section id="contacto" className="py-20 sm:py-28 bg-slate-100 relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
             <MapPin className="w-3.5 h-3.5 text-slate-800" />
             <span>Estamos a su Servicio</span>
           </div>
@@ -47,7 +47,7 @@ export const ContactSection: React.FC = () => {
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {/* Card 1: WhatsApp */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
               <Phone className="w-6 h-6" />
             </div>
@@ -64,8 +64,8 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Card 2: Email */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
-            <div className="w-12 h-12 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center mb-4 border border-slate-300">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
+            <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center mb-4 border border-slate-200">
               <Mail className="w-6 h-6" />
             </div>
             <h3 className="font-bold text-slate-950 text-base mb-1">Correo Electrónico</h3>
@@ -79,7 +79,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Card 3: Location */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100">
               <MapPin className="w-6 h-6" />
             </div>
@@ -91,7 +91,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Card 4: Hours */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center flex flex-col items-center justify-between hover:border-slate-300 shadow-sm transition-all">
             <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4 border border-amber-100">
               <Clock className="w-6 h-6" />
             </div>
@@ -104,148 +104,171 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Contact Form & Map/Coverage Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/* Contact Form & Logistics Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Form */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-950 mb-2">
-              Envíenos un mensaje directo
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-500 mb-6">
-              Complete el formulario y le contactaremos de inmediato por WhatsApp o correo.
-            </p>
-
-            {formSent && (
-              <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center gap-3 text-emerald-800 text-sm">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600" />
-                <span>¡Mensaje preparado! Se ha abierto el chat de WhatsApp para completar el envío.</span>
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between h-full">
+            <div>
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+                <h3 className="text-sm font-black text-slate-950 uppercase tracking-wider flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-slate-900" />
+                  <span>Envíenos un Mensaje Directo</span>
+                </h3>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-bold">
+                  Atención Rápida
+                </span>
               </div>
-            )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <p className="text-xs sm:text-sm text-slate-600 mb-6">
+                Complete el formulario y le contactaremos de inmediato por WhatsApp o correo.
+              </p>
+
+              {formSent && (
+                <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center gap-3 text-emerald-800 text-sm">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600" />
+                  <span>¡Mensaje preparado! Se ha abierto el chat de WhatsApp para completar el envío.</span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="Ej. Ing. Carlos Morales"
+                      className="w-full bg-slate-50 border border-slate-300 text-slate-950 text-sm font-medium rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10 transition-all shadow-xs"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Empresa / Proyecto
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      placeholder="Ej. Constructora del Sur"
+                      className="w-full bg-slate-50 border border-slate-300 text-slate-950 text-sm font-medium rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10 transition-all shadow-xs"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Teléfono o WhatsApp *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+502 0000-0000"
+                      className="w-full bg-slate-50 border border-slate-300 text-slate-950 text-sm font-medium rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10 transition-all shadow-xs"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Correo electrónico *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="correo@ejemplo.com"
+                      className="w-full bg-slate-50 border border-slate-300 text-slate-950 text-sm font-medium rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10 transition-all shadow-xs"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Nombre completo *
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    Mensaje o requerimiento de materiales *
                   </label>
-                  <input
-                    type="text"
+                  <textarea
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Ej. Ing. Carlos Morales"
-                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-slate-950 transition-colors shadow-sm"
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Describa los productos, cantidades o servicios que necesita..."
+                    className="w-full bg-slate-50 border border-slate-300 text-slate-950 text-sm font-medium rounded-xl px-4 py-2.5 focus:bg-white focus:outline-none focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10 transition-all resize-none shadow-xs"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Empresa / Proyecto
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Ej. Constructora del Sur / Proyecto Obra"
-                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-slate-950 transition-colors shadow-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Teléfono o WhatsApp *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+502 0000-0000"
-                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-slate-950 transition-colors shadow-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Correo electrónico *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="correo@ejemplo.com"
-                    className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-slate-950 transition-colors shadow-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Mensaje o requerimiento de materiales *
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Describa los productos, cantidades o servicios que necesita..."
-                  className="w-full bg-white border border-slate-300 text-slate-900 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-slate-950 transition-colors resize-none shadow-sm"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all text-sm"
-              >
-                <Send className="w-4 h-4" />
-                <span>Enviar Consulta por WhatsApp</span>
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all text-sm group"
+                >
+                  <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <span>Enviar Consulta por WhatsApp</span>
+                </button>
+              </form>
+            </div>
           </div>
 
-          {/* Logistics & Map visual */}
-          <div className="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+          {/* Logistics Card */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between h-full">
             <div>
-              <h3 className="text-xl font-bold text-slate-950 mb-2">
-                Logística y Entregas en Guatemala
-              </h3>
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+                <h3 className="text-sm font-black text-slate-950 uppercase tracking-wider flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-slate-900" />
+                  <span>Logística y Entregas en Guatemala</span>
+                </h3>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-bold">
+                  Despacho Nacional
+                </span>
+              </div>
+
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Contamos con coordinación logística para despacho en plataformas y camiones adecuados para el transporte seguro de varillas de 6 metros, láminas de 4x8 pies y rejillas electroforjadas.
+                Coordinación logística para despacho en plataformas y camiones adecuados para el transporte seguro de varillas de 6 metros, láminas de 4x8 pies y perfiles pesados.
               </p>
 
               <div className="space-y-3.5 mb-6">
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <span className="text-xs font-bold text-slate-950 block uppercase tracking-wider mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-xs">
+                  <span className="text-xs font-black text-slate-950 block uppercase tracking-wider mb-1">
                     Área Metropolitana:
                   </span>
-                  <span className="text-xs text-slate-600">
+                  <span className="text-xs text-slate-600 leading-relaxed block">
                     Ciudad de Guatemala, Mixco, Villa Nueva, San Miguel Petapa, Santa Catarina Pinula y Carretera a El Salvador.
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <span className="text-xs font-bold text-slate-950 block uppercase tracking-wider mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-xs">
+                  <span className="text-xs font-black text-slate-950 block uppercase tracking-wider mb-1">
                     Departamentos y Costa:
                   </span>
-                  <span className="text-xs text-slate-600">
+                  <span className="text-xs text-slate-600 leading-relaxed block">
                     Escuintla, Puerto Quetzal, Quetzaltenango, San Marcos, Chimaltenango, Zacapa, Izabal, Petén y todo el interior.
+                  </span>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-xs flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  <span className="text-xs text-slate-700 font-medium">
+                    Flota equipada con sujeción técnica para perfiles de gran longitud.
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Quick direct WhatsApp box */}
-            <div className="pt-4 border-t border-slate-200">
+            <div className="pt-6 mt-6 border-t border-slate-200">
               <a
                 href={createWhatsAppLink("Hola, necesito consultar sobre tiempos de entrega y flete para un pedido de acero.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl text-xs sm:text-sm transition-colors shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-lg group"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Coordinar Despacho por WhatsApp</span>
               </a>
             </div>
