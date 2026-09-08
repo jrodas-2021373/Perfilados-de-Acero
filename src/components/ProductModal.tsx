@@ -15,10 +15,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     };
     if (product) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.classList.remove('modal-open');
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [product, onClose]);
@@ -28,52 +30,58 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
   const quoteMessage = `Hola Perfilados de Acero, S.A., me encuentro revisando la ficha técnica de *${product.name}* (Norma: ${product.standard || 'Estándar'}). Deseo consultar precios, disponibilidad y tiempos de entrega para mi proyecto.`;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-[70] overflow-y-auto bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div 
         className="relative bg-white border border-slate-200 rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header with Image Background */}
-        <div className="relative h-44 sm:h-52 bg-slate-950 overflow-hidden">
+        <div className="relative min-h-[12rem] sm:min-h-[14rem] bg-slate-950 overflow-hidden flex flex-col justify-between p-5 sm:p-6">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover opacity-40"
+            className="absolute inset-0 w-full h-full object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40" />
 
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center border border-white/20 transition-colors"
+            className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center border border-white/20 transition-colors shadow-md"
             aria-label="Cerrar modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Header Title */}
-          <div className="absolute bottom-4 left-6 right-6">
-            <div className="flex items-center gap-2 mb-1.5">
+          {/* Spacer to give room below close button */}
+          <div className="h-6" />
+
+          {/* Header Title & Badges */}
+          <div className="relative z-10 pr-10 sm:pr-12">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
               {product.standard && (
-                <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded bg-white/95 text-slate-950 shadow-sm">
-                  <Shield className="w-3 h-3 text-slate-800" />
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded bg-white/95 text-slate-950 shadow-sm max-w-full">
+                  <Shield className="w-3.5 h-3.5 text-slate-800 flex-shrink-0" />
                   <span>{product.standard}</span>
                 </span>
               )}
               {product.badge && (
-                <span className="text-xs font-medium px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-slate-700">
+                <span className="text-xs font-bold px-2.5 py-1 rounded bg-slate-900/90 text-slate-100 border border-slate-700 shadow-sm">
                   {product.badge}
                 </span>
               )}
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
               {product.name}
             </h2>
           </div>
         </div>
 
         {/* Modal Body - Scrollable */}
-        <div className="p-6 overflow-y-auto space-y-6 text-sm flex-1 text-slate-700">
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm flex-1 text-slate-700">
           {/* Detailed description */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 mb-2 flex items-center gap-1.5">

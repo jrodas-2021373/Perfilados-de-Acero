@@ -25,3 +25,8 @@
     linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
+
+/* Hide floating WhatsApp button when any modal is active */
+body.modal-open .whatsapp-floating-btn {
+  display: none !important;
+}
