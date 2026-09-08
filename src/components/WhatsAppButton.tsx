@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { createWhatsAppLink } from '../data/company';
 
-export const WhatsAppButton: React.FC = () => {
+interface WhatsAppButtonProps {
+  isModalOpen?: boolean;
+}
+
+export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ isModalOpen = false }) => {
   const [tooltipOpen, setTooltipOpen] = useState(true);
 
+  if (isModalOpen) return null;
+
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div className="whatsapp-floating-btn fixed bottom-6 right-6 z-40 flex items-center gap-3">
       {/* Tooltip bubble */}
       {tooltipOpen && (
         <div className="hidden sm:flex items-center gap-2 bg-slate-950 border border-slate-800 text-slate-100 text-xs px-3.5 py-2 rounded-2xl shadow-xl animate-in fade-in slide-in-from-right-2 duration-300">

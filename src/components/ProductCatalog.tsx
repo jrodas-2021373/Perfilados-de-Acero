@@ -6,10 +6,22 @@ import { ProductModal } from './ProductModal';
 import { Search, SlidersHorizontal, Download, Layers } from 'lucide-react';
 import { createWhatsAppLink } from '../data/company';
 
-export const ProductCatalog: React.FC = () => {
+interface ProductCatalogProps {
+  onOpenProductModal?: (product: Product) => void;
+}
+
+export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenProductModal }) => {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('todos');
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeModalProduct, setActiveModalProduct] = useState<Product | null>(null);
+  const [internalModalProduct, setInternalModalProduct] = useState<Product | null>(null);
+
+  const handleOpenModal = (p: Product) => {
+    if (onOpenProductModal) {
+      onOpenProductModal(p);
+    } else {
+      setInternalModalProduct(p);
+    }
+  };
 
   const categories = [
     { id: 'todos', label: 'Todos los Productos' },
@@ -87,7 +99,7 @@ export const ProductCatalog: React.FC = () => {
               <ProductCard
                 key={product.id}
                 product={product}
-                onOpenModal={(p) => setActiveModalProduct(p)}
+                onOpenModal={handleOpenModal}
               />
             ))}
           </div>
@@ -130,11 +142,13 @@ export const ProductCatalog: React.FC = () => {
         </div>
       </div>
 
-      {/* Technical Spec Modal */}
-      <ProductModal
-        product={activeModalProduct}
-        onClose={() => setActiveModalProduct(null)}
-      />
+      {/* Technical Spec Modal (rendered if not handled by root App) */}
+      {!onOpenProductModal && (
+        <ProductModal
+          product={internalModalProduct}
+          onClose={() => setInternalModalProduct(null)}
+        />
+      )}
     </section>
   );
 };
