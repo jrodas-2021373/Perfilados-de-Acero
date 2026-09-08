@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
                 <a href="#servicios" className="hover:text-white transition-colors">Servicios Industriales</a>
               </li>
               <li>
-                <a href="#cotizador" className="hover:text-white transition-colors">Cotizador en Línea</a>
+                <a href="#cotizador" className="hover:text-white transition-colors">Cotización de Materiales</a>
               </li>
               <li>
                 <a href="#nosotros" className="hover:text-white transition-colors">Sobre la Empresa</a>
